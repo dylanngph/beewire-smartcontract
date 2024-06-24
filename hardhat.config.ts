@@ -1,16 +1,19 @@
-import type { HardhatUserConfig } from "hardhat/config";
+import { vars, type HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox-viem";
-import "dotenv/config";
 
-const accounts: string[] = [process.env.PRIVATE_KEY_1 as string];
+const deloyer = vars.get("DEPLOYER_PRIVATE_KEY");
 
 const config: HardhatUserConfig = {
   solidity: "0.8.24",
-  defaultNetwork: "klaytn",
+  defaultNetwork: "sepolia",
   networks: {
-    klaytn: {
-      url: "https://public-en-cypress.klaytn.net",
-      accounts,
+    hardhat: {
+      chainId: 1337,
+    },
+    sepolia: {
+      url: "https://ethereum-sepolia-rpc.publicnode.com	",
+      chainId: 11155111,
+      accounts: [deloyer],
     },
   },
 };

@@ -1,9 +1,14 @@
 {
   "name": "beewire-smc",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "dylanngph",
+  "repository": "https://github.com/dylanngph/beewire-smartcontract.git",
+  "author": "dylanngph <duyngph@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-ignition": "^0.15.0",
     "@nomicfoundation/hardhat-ignition-viem": "^0.15.0",
@@ -24,7 +29,6 @@
     "viem": "^2.7.6"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.0.2",
-    "dotenv": "^16.4.5"
+    "@openzeppelin/contracts": "^5.0.2"
   }
 }
